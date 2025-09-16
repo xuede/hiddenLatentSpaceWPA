@@ -1,0 +1,5 @@
+<svg role="img" aria-label="Terminal icon" xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="black" rx="85"/>
+  <path d="M128 181 L208 256 L128 331" stroke="#34d399" fill="none" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="240" y="224" width="120" height="64" fill="#34d399"/>
+</svg>
