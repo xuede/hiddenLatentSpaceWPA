@@ -4,6 +4,12 @@
   "description": "A dynamic, retro-terminal text adventure game powered by Gemini. The world is a surreal mix of Dhalgren and Borges, with a darkly comedic, Kafka-esque tone.",
   "icons": [
     {
+      "src": "/assets/icons/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any monochrome"
+    },
+    {
       "src": "/assets/icons/icon-192.svg",
       "type": "image/svg+xml",
       "sizes": "192x192"

@@ -4,7 +4,8 @@ const URLS_TO_CACHE = [
   '/index.html',
   '/index.tsx',
   '/assets/icons/icon-192.svg',
-  '/assets/icons/icon-512.svg'
+  '/assets/icons/icon-512.svg',
+  '/assets/icons/favicon.svg'
 ];
 
 self.addEventListener('install', event => {
