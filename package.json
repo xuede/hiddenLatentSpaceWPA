@@ -1,21 +1,12 @@
 {
   "name": "gemini-text-adventure",
+  "version": "1.0.0",
+  "description": "A dynamic, retro-terminal text adventure game powered by Gemini. The world is a surreal mix of Dhalgren and Borges, with a darkly comedic, Kafka-esque tone.",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "serve -s ."
   },
   "dependencies": {
-    "@google/genai": "^1.19.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
-  },
-  "devDependencies": {
-    "@types/node": "^22.14.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
+    "serve": "^14.2.3"
   }
 }
