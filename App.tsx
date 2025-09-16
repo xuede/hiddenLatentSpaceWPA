@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Terminal } from './components/Terminal';
 import { Scanlines } from './components/Scanlines';
+import { SubscriptionModal } from './components/SubscriptionModal';
 import { initializeGame, sendPlayerAction } from './services/geminiService';
 import type { StoryEntry } from './types';
 
@@ -9,10 +10,12 @@ function App() {
   const [storyLog, setStoryLog] = useState<StoryEntry[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [isSubscribed, setIsSubscribed] = useState<boolean>(false);
 
   const startGame = useCallback(async () => {
     setIsLoading(true);
     setError(null);
+    setStoryLog([]);
     try {
       const initialNarrative = await initializeGame();
       setStoryLog([{ text: initialNarrative, from: 'narrator' }]);
@@ -27,9 +30,10 @@ function App() {
   }, []);
 
   useEffect(() => {
-    startGame();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (isSubscribed) {
+      startGame();
+    }
+  }, [isSubscribed, startGame]);
 
   const handleCommand = async (command: string) => {
     if (!command || isLoading) return;
@@ -53,18 +57,26 @@ function App() {
       setIsLoading(false);
     }
   };
+  
+  const handleSubscribe = () => {
+    setIsSubscribed(true);
+  };
 
   return (
     <main className="relative w-screen h-screen bg-black text-green-400 font-mono overflow-hidden">
       <Scanlines />
-      <div className="absolute inset-0 p-4 overflow-y-auto">
-        <Terminal 
-          storyLog={storyLog} 
-          isLoading={isLoading} 
-          error={error} 
-          onCommandSubmit={handleCommand} 
-        />
-      </div>
+      {isSubscribed ? (
+        <div className="absolute inset-0 p-4 overflow-y-auto">
+          <Terminal 
+            storyLog={storyLog} 
+            isLoading={isLoading} 
+            error={error} 
+            onCommandSubmit={handleCommand} 
+          />
+        </div>
+      ) : (
+        <SubscriptionModal onSubscribe={handleSubscribe} />
+      )}
     </main>
   );
 }
