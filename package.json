@@ -1,12 +1,14 @@
 {
   "name": "gemini-text-adventure",
   "version": "1.0.0",
-  "description": "A dynamic, retro-terminal text adventure game powered by Gemini. The world is a surreal mix of Dhalgren and Borges, with a darkly comedic, Kafka-esque tone.",
+  "description": "A dynamic, retro-terminal text adventure game powered by Gemini.",
   "private": true,
   "scripts": {
-    "start": "serve -s ."
+    "start": "serve -s .",
+    "build": "esbuild index.tsx --bundle --outfile=bundle.js --format=esm --jsx=automatic"
   },
   "dependencies": {
-    "serve": "^14.2.3"
+    "serve": "^14.2.3",
+    "esbuild": "^0.20.2"
   }
 }

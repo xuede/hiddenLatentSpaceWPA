@@ -2,7 +2,7 @@ const CACHE_NAME = 'gemini-adventure-cache-v1';
 const URLS_TO_CACHE = [
   '/',
   '/index.html',
-  '/index.tsx',
+  '/bundle.js',
   '/assets/icons/icon-192.svg',
   '/assets/icons/icon-512.svg',
   '/assets/icons/favicon.svg'
