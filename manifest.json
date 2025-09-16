@@ -1,7 +1,7 @@
 {
-  "short_name": "Gemini ADV",
-  "name": "Gemini Text Adventure",
-  "description": "A dynamic, retro-terminal text adventure game powered by Gemini. The world is a surreal mix of Dhalgren and Borges, with a darkly comedic, Kafka-esque tone.",
+  "short_name": "Latent Space",
+  "name": "Hidden Latent Space",
+  "description": "A dynamic, retro-terminal text adventure game powered by Gemini, set in a surreal world that is a mix of Dhalgren and Borges, with a darkly comedic, Kafka-esque tone.",
   "icons": [
     {
       "src": "/assets/icons/favicon.svg",

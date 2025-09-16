@@ -1,4 +1,3 @@
-
 import { GoogleGenAI, Chat } from "@google/genai";
 import type { GenerateContentResponse } from "@google/genai";
 
@@ -17,7 +16,7 @@ let gameChat: Chat | null = null;
 
 export const initializeGame = async (): Promise<string> => {
   if (!process.env.API_KEY) {
-    throw new Error("API_KEY environment variable not set.");
+    throw new Error("API_KEY is not set. Ensure the API_KEY environment variable is available during the build process.");
   }
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
